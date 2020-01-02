@@ -61,7 +61,7 @@ namespace Blazor.Extensions.SignalR.Test.Server
                         // If the request is for our hub...
                         var path = context.HttpContext.Request.Path;
                         if (!string.IsNullOrEmpty(accessToken) &&
-                            (path.StartsWithSegments("/chathub")))
+                            (path.StartsWithSegments("/chathub") || (path.StartsWithSegments("/deepviewerhub"))))
                         {
                             // Read the token out of the query string
                             context.Token = accessToken;
@@ -114,6 +114,7 @@ namespace Blazor.Extensions.SignalR.Test.Server
             {
                 endpoints.MapDefaultControllerRoute();
                 endpoints.MapHub<ChatHub>("/chathub");
+                endpoints.MapHub<DeepViewerHub>("/deepviewerhub");
                 endpoints.MapFallbackToClientSideBlazor<Client.Startup>("index.html");
             });
         }

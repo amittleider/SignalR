@@ -85,6 +85,8 @@ namespace Blazor.Extensions.SignalR.Test.Server
                 opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
                     new[] { "application/octet-stream" });
             });
+
+            services.AddHostedService<IexDeepListener>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

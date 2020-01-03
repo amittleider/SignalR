@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Blazor.Extensions.SignalR.JS\Blazor.Extensions.SignalR.JS.csproj" />
     <ProjectReference Include="..\..\src\Blazor.Extensions.SignalR\Blazor.Extensions.SignalR.csproj" />
+    <ProjectReference Include="..\..\IEXSharp\IEXSharp\IEXSharp.csproj" />
   </ItemGroup>
 
 </Project>

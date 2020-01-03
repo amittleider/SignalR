@@ -40,7 +40,7 @@ public class IexDeepListener : BackgroundService
 
         while (!stoppingToken.IsCancellationRequested)
         {
-            // await this.deepViewerHub.Clients.All.Send("Message Received");
+            await this.deepViewerHub.Clients.All.Send("Not Stopping");
             sseClient.Close();
             await Task.Delay(1000);
         }

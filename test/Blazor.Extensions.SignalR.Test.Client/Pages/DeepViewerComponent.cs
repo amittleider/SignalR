@@ -13,9 +13,6 @@ namespace Blazor.Extensions.SignalR.Test.Client.Pages
     {
         [Inject] private HttpClient _http { get; set; }
         [Inject] private HubConnectionBuilder _hubConnectionBuilder { get; set; }
-        internal string ToEverybody { get; set; }
-        internal string ToGroup { get; set; }
-        internal string GroupName { get; set; }
         internal List<string> Messages { get; set; } = new List<string>();
 
         private HubConnection connection;
@@ -95,26 +92,6 @@ namespace Blazor.Extensions.SignalR.Test.Client.Pages
             this.Messages.Add(msg);
             this.StateHasChanged();
             return Task.CompletedTask;
-        }
-
-        internal async Task Broadcast()
-        {
-            await this.connection.InvokeAsync("Send", this.ToEverybody);
-        }
-
-        internal async Task SendToGroup()
-        {
-            await this.connection.InvokeAsync("SendToGroup", this.GroupName, this.ToGroup);
-        }
-
-        internal async Task JoinGroup()
-        {
-            await this.connection.InvokeAsync("JoinGroup", this.GroupName);
-        }
-
-        internal async Task LeaveGroup()
-        {
-            await this.connection.InvokeAsync("LeaveGroup", this.GroupName);
         }
     }
 }

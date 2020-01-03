@@ -70,6 +70,10 @@ namespace Blazor.Extensions.SignalR.Test.Client.Pages
             else
             {
                 this.Messages.Add(msg.ToString());
+                if (this.Messages.Count > 10)
+                {
+                    this.Messages.RemoveAt(0);
+                }
             }
             this.StateHasChanged();
             return Task.CompletedTask;

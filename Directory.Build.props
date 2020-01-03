@@ -17,7 +17,7 @@
   <!-- Common compile parameters -->
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <!-- We use full (Windows PDBs) until cross platform support for source link will get better -->
     <DebugType>full</DebugType>
